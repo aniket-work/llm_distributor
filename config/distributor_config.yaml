@@ -1,0 +1,34 @@
+routes:
+  - pojoType: com.example.Product
+    routeTopic: product_topic
+    conditions:
+      - field: price
+        operator: lessThan
+        value: 40
+      - field: category
+        operator: equals
+        value: "kids"
+      - field: relevance
+        operator: equals
+        value: "high"  # Condition for high relevance
+      - field: relevance
+        operator: equals
+        value: "medium"  # Condition for medium relevance
+      - field: relevance
+        operator: equals
+        value: "low"   # Condition for low relevance
+  - pojoType: com.example.Order
+    routeTopic: order_topic
+    conditions: []  # No conditions specified for this route
+  - pojoType: com.example.Product
+    routeTopic: electronics_topic
+    conditions:
+      - field: price
+        operator: greaterThanOrEqual
+        value: 40
+      - field: category
+        operator: equals
+        value: "electronics"
+      - field: relevance
+        operator: equals
+        value: "medium"  # Example of additional condition based on relevance
